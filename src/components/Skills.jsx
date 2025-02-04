@@ -1,4 +1,4 @@
-import { Terminal, Code, GitMerge, Bot, Database, Cpu } from 'lucide-react';
+import { SquareTerminal, Code, GitMerge, Bot, Database, Cpu } from 'lucide-react';
 
 const skills = [
   {
@@ -40,14 +40,14 @@ const Skills = () => {
   return (
     <section>
       <div className="flex items-center gap-2 mb-2 px-1 py-1 bg-gray-100">
-        <Terminal className="w-6 h-6 text-gray-800" />
+        <SquareTerminal className="w-6 h-6 text-gray-800" />
         <h2 className="text-[16px] font-semibold text-gray-800">
           Compétences Techniques
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {skills.map((skillGroup) => (
-          <div key={skillGroup.category}>
+          <div key={skillGroup.category} className='bg-neutral-50 p-2 rounded'>
             <div className="flex items-center gap-2 mb-2">
               {skillGroup.icon}
               <h3 className="font-medium">{skillGroup.category}</h3>
@@ -56,7 +56,7 @@ const Skills = () => {
               {skillGroup.items.map((skill) => (
                 <span
                   key={skill}
-                  className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full"
+                  className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full"
                 >
                   {skill}
                 </span>

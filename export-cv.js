@@ -4,7 +4,7 @@ import puppeteer from "puppeteer";
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  const viteUrl = "http://localhost:5173";
+  const viteUrl = "http://localhost:4242";
 
   console.log(`Accès à ${viteUrl}...`);
   await page.goto(viteUrl, { waitUntil: "networkidle0" });

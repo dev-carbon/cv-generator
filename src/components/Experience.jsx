@@ -1,10 +1,10 @@
 import { Briefcase } from 'lucide-react';
-import ExperienceCard from './ExperienceCard';
 
 const experiences = [
   {
     title: 'Fondateur & Formateur Principal - DevChainer',
     subtitle: 'Formation Blockchain',
+    date: '2024 - present',
     details: [
       "Création et gestion d'une plateforme de formation complète en blockchain",
       'Développement de programmes et de contenu pédagogique pour la technologie blockchain',
@@ -14,6 +14,7 @@ const experiences = [
   {
     title: 'Développeur Logiciel Freelance',
     subtitle: "5 ans d'expérience",
+    date: '2020 - present',
     details: [
       "Développement et maintenance d'applications full-stack avec différentes technologies",
       "Mise en place de solutions d'automatisation avec Puppeteer et Selenium",
@@ -24,6 +25,20 @@ const experiences = [
     ],
   },
 ];
+
+const ExperienceCard = ({ title, subtitle, details }) => {
+  return (
+    <div className="mb-2">
+      <h3 className="font-medium">{title}</h3>
+      <p className="text-gray-600">{subtitle}</p>
+      <ul className="list-disc ml-6 mt-1 text-gray-700">
+        {details.map((detail, index) => (
+          <li key={index}>{detail}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const Experience = () => {
   return (
@@ -36,12 +51,7 @@ const Experience = () => {
       </div>
       <div className="ml-4">
         {experiences.map((experience, index) => (
-          <ExperienceCard
-            key={index}
-            title={experience.title}
-            subtitle={experience.subtitle}
-            details={experience.details}
-          />
+          <ExperienceCard key={index} {...experience} />
         ))}
       </div>
     </section>

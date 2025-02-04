@@ -1,5 +1,4 @@
 import { Trophy } from 'lucide-react';
-import AchievementCard from './AchievementCard';
 
 const achievements = [
   {
@@ -14,6 +13,15 @@ const achievements = [
   },
 ];
 
+const AchievementCard = ({ title, description }) => {
+  return (
+    <div className="mb-2">
+      <span className="font-bold">{title}</span>
+      <p className="mt-1">{description}</p>
+    </div>
+  );
+};
+
 const Achievements = () => {
   return (
     <section className="mb-[12px]">
@@ -27,10 +35,7 @@ const Achievements = () => {
         <ul className="list-disc ml-6 text-gray-700">
           {achievements.map((achievement, index) => (
             <li key={index}>
-              <AchievementCard
-                title={achievement.title}
-                description={achievement.description}
-              />
+              <AchievementCard {...achievement} />
             </li>
           ))}
         </ul>
